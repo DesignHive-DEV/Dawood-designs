@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawood Sheikh | Graphic Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #faf7f2;
+            --warm-beige: #f5ebe0;
+            --terracotta: #c17b5e;
+            --clay: #b28b7a;
+            --warm-brown: #8b6b5c;
+            --deep-brown: #5e4b3c;
+            --text-dark: #3e3a36;
+            --text-soft: #6b625a;
+            --card-bg: #ffffff;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 25px 45px rgba(139, 107, 92, 0.12);
+            --border-light: 1px solid rgba(193, 123, 94, 0.15);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: var(--border-light);
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--deep-brown);
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--terracotta);
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+        }
+
+        nav ul li a {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-greeting {
+            color: var(--terracotta);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: clamp(3.2rem, 8vw, 5.2rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--deep-brown);
+        }
+
+        .hero-title-line {
+            display: block;
+            overflow: hidden;
+        }
+
+        .hero-title-line span {
+            display: block;
+            animation: slideUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(100%);
+        }
+
+        .hero-title-line:nth-child(1) span { animation-delay: 0.2s; }
+        .hero-title-line:nth-child(2) span { animation-delay: 0.4s; }
+        .hero-title-line:nth-child(3) span { animation-delay: 0.6s; }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-description {
+            color: var(--text-soft);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 45px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 38px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--terracotta);
+            color: white;
+            box-shadow: 0 5px 20px rgba(193, 123, 94, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--warm-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(193, 123, 94, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--deep-brown);
+            border: 2px solid var(--terracotta);
+        }
+
+        .btn-outline:hover {
+            background: var(--terracotta);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Stats */
+        .stats {
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            border: var(--border-light);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--terracotta);
+        }
+
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.2rem;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 40px;
+        }
+
+        .section-alt {
+            background: var(--warm-beige);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-subtitle {
+            color: var(--terracotta);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--deep-brown);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Featured Work Section - Alternating Layout */
+        .featured-work {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+            background: var(--card-bg);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            border: var(--border-light);
+            transition: var(--transition);
+        }
+
+        .featured-item:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--terracotta);
+        }
+
+        .featured-item:nth-child(even) .featured-image {
+            order: 2;
+        }
+
+        .featured-item:nth-child(even) .featured-content {
+            order: 1;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .featured-item:hover .featured-image {
+            transform: scale(1.02);
+        }
+
+        .featured-content {
+            padding: 20px;
+        }
+
+        .featured-client {
+            color: var(--terracotta);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .featured-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--deep-brown);
+            line-height: 1.2;
+        }
+
+        .featured-category {
+            color: var(--text-soft);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .featured-description {
+            color: var(--text-soft);
+            margin-bottom: 30px;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .featured-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--terracotta);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .featured-link:hover {
+            gap: 15px;
+            color: var(--warm-brown);
+        }
+
+        /* Clients Grid */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .client-item {
+            background: var(--card-bg);
+            border: var(--border-light);
+            border-radius: 25px;
+            padding: 35px 20px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .client-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--terracotta);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .client-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: var(--deep-brown);
+            margin-bottom: 8px;
+        }
+
+        .client-project {
+            color: var(--terracotta);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: var(--card-bg);
+            border: var(--border-light);
+            border-radius: 30px;
+            padding: 45px 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--terracotta);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(193, 123, 94, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2rem;
+            color: var(--terracotta);
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-icon {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--deep-brown);
+        }
+
+        .service-description {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
+            border: var(--border-light);
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--deep-brown);
+        }
+
+        .about-text p {
+            color: var(--text-soft);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .skill-tag {
+            background: rgba(193, 123, 94, 0.08);
+            color: var(--terracotta);
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(193, 123, 94, 0.2);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 40px;
+            background: var(--warm-beige);
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: var(--deep-brown);
+        }
+
+        .contact-text {
+            color: var(--text-soft);
+            max-width: 550px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            background: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 20px rgba(193, 123, 94, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: var(--warm-brown);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(193, 123, 94, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 40px 30px;
+            background: var(--card-bg);
+            border-top: var(--border-light);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--deep-brown);
+        }
+
+        .footer-logo span {
+            color: var(--terracotta);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--terracotta);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+            border: var(--border-light);
+        }
+
+        .social-link:hover {
+            background: var(--terracotta);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: var(--border-light);
+        }
+
+        /* Project Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            width: 90%;
+            background: var(--card-bg);
+            border-radius: 40px;
+            padding: 45px;
+            position: relative;
+            border: var(--border-light);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: var(--text-soft);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: var(--cream);
+            color: var(--terracotta);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin-bottom: 30px;
+        }
+
+        .modal-title {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--deep-brown);
+        }
+
+        .modal-category {
+            color: var(--terracotta);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .modal-description {
+            color: var(--text-soft);
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .modal-client {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(193, 123, 94, 0.1);
+            color: var(--terracotta);
+            border-radius: 40px;
+            font-weight: 500;
+        }
+
+        /* Contact Form */
+        #contactForm input,
+        #contactForm textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--cream);
+            border: var(--border-light);
+            color: var(--text-dark);
+            border-radius: 15px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        #contactForm input:focus,
+        #contactForm textarea:focus {
+            outline: none;
+            border-color: var(--terracotta);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+            
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .featured-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 30px;
+            }
+
+            .featured-item:nth-child(even) .featured-image {
+                order: 1;
+            }
+
+            .featured-item:nth-child(even) .featured-content {
+                order: 2;
+            }
+
+            .featured-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 25px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--cream);
+                transition: left 0.3s;
+                padding: 50px;
+                border-top: var(--border-light);
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 35px;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .featured-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-item {
+                padding: 20px;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Dawood<span>.</span></a>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#clients" class="nav-link">Clients</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-greeting">GRAPHIC DESIGNER & WEB DEVELOPER</span>
+            <h1 class="hero-title">
+                <div class="hero-title-line"><span>Creating Visual</span></div>
+                <div class="hero-title-line"><span>Stories That</span></div>
+                <div class="hero-title-line"><span>Connect</span></div>
+            </h1>
+            <p class="hero-description">
+                I'm Dawood Sheikh, specializing in posters, logos, social media posts, banners, 
+                and website development. Let's bring your brand's vision to life.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('work')">View Portfolio</button>
+                <button class="btn btn-outline" onclick="scrollToSection('contact')">Let's Talk</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number" data-target="200">0</div>
+            <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="8">0</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">Brands Served</div>
+        </div>
+    </div>
+
+    <!-- Featured Work Section - Alternating Layout -->
+    <section class="section" id="work">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">PORTFOLIO</span>
+                <h2 class="section-title">Featured Work</h2>
+            </div>
+            <div class="featured-work" id="featuredWork">
+                <!-- Projects will be loaded via JavaScript with alternating layout -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="section section-alt" id="clients">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">TRUSTED BY</span>
+                <h2 class="section-title">Brands I've Worked With</h2>
+            </div>
+            <div class="clients-grid" id="clientsGrid">
+                <!-- Clients will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">WHAT I DO</span>
+                <h2 class="section-title">Services I Offer</h2>
+            </div>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">ABOUT ME</span>
+                <h2 class="section-title">Dawood Sheikh</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dawood Sheikh">
+                </div>
+                <div class="about-text">
+                    <h3>Graphic Designer & Web Developer</h3>
+                    <p>
+                        With over 8 years of experience in graphic design and web development, 
+                        I've had the pleasure of working with amazing brands like Craftie.co, 
+                        Bake Aura, Car Clinic, and many others. My approach combines creative 
+                        vision with technical expertise to deliver designs that not only look 
+                        beautiful but drive results.
+                    </p>
+                    <p>
+                        I specialize in creating impactful brand identities, engaging social media 
+                        content, and functional websites that help businesses stand out in today's 
+                        digital landscape. Every project is an opportunity to tell a unique story.
+                    </p>
+                    <div class="skills">
+                        <span class="skill-tag">Posters</span>
+                        <span class="skill-tag">Logos</span>
+                        <span class="skill-tag">Social Media Posts</span>
+                        <span class="skill-tag">Banners</span>
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Brand Identity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <span class="section-subtitle">GET IN TOUCH</span>
+            <h2 class="contact-title">Let's Create Something</h2>
+            <p class="contact-text">
+                Have a project in mind? I'd love to hear about it. Let's discuss 
+                how we can bring your vision to life.
+            </p>
+            <button class="contact-btn" onclick="openContactModal()">
+                <i class="fas fa-paper-plane"></i>
+                Start a Conversation
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Dawood<span>.</span></div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Dawood Sheikh. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <img src="" alt="" class="modal-image" id="modalImage">
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <div class="modal-category" id="modalCategory"></div>
+            <p class="modal-description" id="modalDescription"></p>
+            <div class="modal-client" id="modalClient"></div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+            <h3 class="modal-title" style="margin-bottom: 30px;">Send a Message</h3>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <textarea placeholder="Tell me about your project" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Portfolio Data with your real clients
+        const projects = [
+            {
+                id: 1,
+                title: "Brand Identity Package",
+                category: "Logo Design",
+                client: "Craftie.co",
+                description: "Complete brand identity including logo, color palette, and brand guidelines for a handmade crafts business.",
+                image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Created a warm, inviting brand identity that reflects Craftie.co's handmade, artisanal approach. The logo combines modern minimalism with handcrafted elements, supported by a versatile color palette and comprehensive brand guidelines."
+            },
+            {
+                id: 2,
+                title: "Social Media Campaign",
+                category: "Posts & Banners",
+                client: "Bake_aura",
+                description: "Monthly social media posts and promotional banners for a boutique bakery.",
+                image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Designed a cohesive social media presence for Bake_aura, creating mouth-watering visuals that increased engagement by 150%. The campaign included daily posts, story templates, and promotional banners for special offers."
+            },
+            {
+                id: 3,
+                title: "Complete Rebranding",
+                category: "Brand Identity",
+                client: "Car Clinic",
+                description: "Full rebrand including logo, stationery, and vehicle wraps for an auto service center.",
+                image: "https://images.unsplash.com/photo-1622115834922-3e7e8d8f6e3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Transformed Car Clinic's outdated brand into a modern, trustworthy identity. Created a bold logo, professional stationery, and eye-catching vehicle wraps that helped establish them as a premium service provider."
+            },
+            {
+                id: 4,
+                title: "Website Design",
+                category: "Web Development",
+                client: "Alexandria",
+                description: "Custom website design and development for a luxury lifestyle brand.",
+                image: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Designed and developed a sophisticated e-commerce website for Alexandria. The site features a minimalist aesthetic, smooth animations, and seamless user experience across all devices."
+            },
+            {
+                id: 5,
+                title: "Product Packaging",
+                category: "Packaging Design",
+                client: "Satin-official",
+                description: "Luxury packaging design for a premium beauty products line.",
+                image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Created elegant, minimal packaging for Satin-official's premium beauty line. The design uses soft colors and refined typography to convey luxury while maintaining a clean, modern aesthetic."
+            },
+            {
+                id: 6,
+                title: "Brand Guidelines",
+                category: "Brand Identity",
+                client: "Al Haya",
+                description: "Comprehensive brand guidelines and marketing materials for a wellness brand.",
+                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Developed a complete brand identity system for Al Haya, including logo design, color palette, typography, and marketing collateral. The design reflects their commitment to holistic wellness."
+            },
+            {
+                id: 7,
+                title: "Social Media Kit",
+                category: "Posts & Banners",
+                client: "Beutiboss",
+                description: "Complete social media kit including posts, stories, and reels templates.",
+                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Created a versatile social media kit for Beutiboss that maintained brand consistency while allowing for creative flexibility. The kit included templates for various post types and story formats."
+            },
+            {
+                id: 8,
+                title: "Personal Branding",
+                category: "Brand Identity",
+                client: "Umersheikh",
+                description: "Personal brand identity including logo, business cards, and digital presence.",
+                image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                longDescription: "Designed a sophisticated personal brand for Umersheikh that reflects their professional expertise and personal style. The identity includes a custom monogram, premium stationery, and a cohesive digital presence."
+            }
+        ];
+
+        const clients = [
+            { name: "Craftie.co", project: "Brand Identity", icon: "fa-solid fa-paint-brush" },
+            { name: "Bake_aura", project: "Social Media", icon: "fa-solid fa-cake-candles" },
+            { name: "Car Clinic", project: "Rebranding", icon: "fa-solid fa-car" },
+            { name: "Alexandria", project: "Website", icon: "fa-solid fa-globe" },
+            { name: "Satin-official", project: "Packaging", icon: "fa-solid fa-spray-can-sparkles" },
+            { name: "Al Haya", project: "Brand Guidelines", icon: "fa-solid fa-leaf" },
+            { name: "Beutiboss", project: "Social Kit", icon: "fa-solid fa-crown" },
+            { name: "Umersheikh", project: "Personal Brand", icon: "fa-solid fa-user-tie" }
+        ];
+
+        const services = [
+            {
+                title: "Poster Design",
+                description: "Eye-catching posters for events, promotions, and campaigns that grab attention and communicate your message effectively.",
+                icon: "fa-solid fa-image"
+            },
+            {
+                title: "Logo Design",
+                description: "Unique, memorable logos that capture your brand's essence and create lasting impressions with your audience.",
+                icon: "fa-solid fa-pen-nib"
+            },
+            {
+                title: "Social Media Posts",
+                description: "Engaging social media content that builds your brand presence and connects with your followers.",
+                icon: "fa-solid fa-hashtag"
+            },
+            {
+                title: "Banner Design",
+                description: "Professional banners for websites, ads, and promotions that drive engagement and conversions.",
+                icon: "fa-solid fa-flag"
+            },
+            {
+                title: "Web Development",
+                description: "Custom websites that are beautiful, functional, and optimized for the best user experience.",
+                icon: "fa-solid fa-code"
+            },
+            {
+                title: "Brand Identity",
+                description: "Complete brand development from strategy to visual identity, ensuring consistency across all platforms.",
+                icon: "fa-solid fa-brush"
+            }
+        ];
+
+        // DOM Elements
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const featuredWork = document.getElementById('featuredWork');
+        const clientsGrid = document.getElementById('clientsGrid');
+        const servicesGrid = document.getElementById('servicesGrid');
+        const modal = document.getElementById('projectModal');
+        const contactModal = document.getElementById('contactModal');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderFeaturedWork();
+            renderClients();
+            renderServices();
+            startCounters();
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        nav.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Render Featured Work with Alternating Layout
+        function renderFeaturedWork() {
+            featuredWork.innerHTML = '';
+            
+            projects.forEach((project, index) => {
+                const isEven = index % 2 === 0;
+                const featuredItem = document.createElement('div');
+                featuredItem.className = 'featured-item';
+                featuredItem.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}" class="featured-image">
+                    <div class="featured-content">
+                        <span class="featured-client">${project.client}</span>
+                        <h3 class="featured-title">${project.title}</h3>
+                        <div class="featured-category">${project.category}</div>
+                        <p class="featured-description">${project.description}</p>
+                        <span class="featured-link" onclick="openProjectModal(${project.id})">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                `;
+                featuredWork.appendChild(featuredItem);
+            });
+        }
+
+        function renderClients() {
+            clientsGrid.innerHTML = '';
+            
+            clients.forEach(client => {
+                const clientElement = document.createElement('div');
+                clientElement.className = 'client-item';
+                clientElement.innerHTML = `
+                    <i class="${client.icon}" style="font-size: 2rem; color: var(--terracotta); margin-bottom: 20px;"></i>
+                    <div class="client-name">${client.name}</div>
+                    <div class="client-project">${client.project}</div>
+                `;
+                clientsGrid.appendChild(clientElement);
+            });
+        }
+
+        function renderServices() {
+            servicesGrid.innerHTML = '';
+            
+            services.forEach(service => {
+                const serviceElement = document.createElement('div');
+                serviceElement.className = 'service-item';
+                serviceElement.innerHTML = `
+                    <div class="service-icon">
+                        <i class="${service.icon}"></i>
+                    </div>
+                    <h3 class="service-title">${service.title}</h3>
+                    <p class="service-description">${service.description}</p>
+                `;
+                servicesGrid.appendChild(serviceElement);
+            });
+        }
+
+        // Counter animation
+        function startCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Modal functions
+        function openProjectModal(projectId) {
+            const project = projects.find(p => p.id === projectId);
+            
+            document.getElementById('modalImage').src = project.image;
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalCategory').textContent = project.category;
+            document.getElementById('modalDescription').textContent = project.longDescription;
+            document.getElementById('modalClient').textContent = `Client: ${project.client}`;
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        function openContactModal() {
+            contactModal.classList.add('active');
+        }
+
+        function closeContactModal() {
+            contactModal.classList.remove('active');
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your message! I\'ll get back to you within 24 hours.');
+            
+            // Close modal
+            closeContactModal();
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeContactModal();
+            }
+        });
+
+        // Close modals on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                closeContactModal();
+            }
+        });
+    </script>
+</body>
+</html>
